@@ -1,0 +1,31 @@
+<!-- ---
+import ComponenteUtilizable from "./ComponenteUtilizable.astro";
+import IconoProyect from "./icons/IconoProyect.astro"
+
+const PROYECTOS = [
+  {
+    title: 'Mokepones',
+    description: 'Videojuego tipo Pokémon hecho en JavaScript.',
+    link: 'https://mokepones.glenn.dev',
+    github: 'https://github.com/01GlennAM/mokepones',
+    image: '/mokepones.PNG',
+    tags: ['HTML', 'CSS', 'JavaScript']
+  }
+]
+---
+
+<div class="grid gap-6 md:grid-cols-2">
+  {PROYECTOS.map(({ title, description, image, tags, github, link }) => (
+    <ComponenteUtilizable 
+      title={title}
+      description={description}
+      image={image}
+      tags={tags}
+      github={github}
+      link={link}
+    >
+
+    </ComponenteUtilizable>
+  ))}
+</div>
+ -->

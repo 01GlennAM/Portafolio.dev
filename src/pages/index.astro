@@ -1,0 +1,73 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import Redes from '../components/Redes.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import GitHubx from '../components/icons/GitHubx.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import Section from '../components/icons/Section.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Proyectoss from '../components/Proyectoss.astro';
+import IconoProyect from '../components/icons/IconoProyect.astro';
+
+// import Prueba from '../components/Prueba.astro';
+import ComponenteUtilizable from '../components/ComponenteUtilizable.astro';
+
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="Portafolio Glenn-Desarrollo De SotfWare"></title>
+    
+    <main class="text-center ">
+    <SectionContainer>
+        <img src="" alt="">
+				<h1 class="leading-snug lg:text-6xl md:text-3xl font-bold  text-lg font-onest gap-4 opacity-80 "> Hey, <span class="font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent" >Soy Glenn Álvarez</span><br></h1>
+				<p class="leading-snug font-poppins text-gray-400 text-xs md:text-base lg:text-xl p-2">Junior en el desarrollo web, Este es mi portafolio.<br> <span >Donde muestro mis proyectos y habilidades en desarrollo web.</span></p> <br>
+
+        <nav class="flex items-center m-4 mt-2 flex-wrap gap-4 justify-center">
+             <Redes href="https://www.linkedin.com/in/glenn-álvarez-b37029297/">
+                <LinkedIn class="w-6 h-6"  /> LinkedIn
+             </Redes >
+            <Redes href="https://github.com/session">
+                <GitHubx class="w-6 h-6 " /> GitHub
+            </Redes>
+            <Redes href="https://github.com/01GlennAM">
+                <MailIcon class="w-6 h-6 " /> glennalverez@gmail.com
+            </Redes>
+        </nav>
+    </SectionContainer>	
+
+    <SectionContainer id="acerca-de-mi" >             
+         <Section />
+    </SectionContainer> 
+    
+     <SectionContainer id="proyectos">
+        <h2 class="underline decoration-orange-500 text-base md:text-3xl lg:text-4xl flex gap-2 font-bold font-onest opacity-80 my-4"> proyectos <IconoProyect class="h-14 lg:w-14 opacity-80 "/> </h2>
+        <ComponenteUtilizable
+                title="Proyecto"
+                description="Un juego de mokepones que se puede jugar de manera local entre dos personas."
+                image="/mokepones.PNG"
+                link='#'
+                tags={["HTML", "CSS", "JavaScript" , "NodeJs"]}
+                github='#'
+>
+        <IconoProyect slot="icon" class="w-5 h-5 text-orange-400" />
+        </ComponenteUtilizable>
+
+         <ComponenteUtilizable
+                title="Proyecto"
+                description="Un juego de mokepones que se puede jugar de manera local entre dos personas."
+                image="/mokepones.PNG"
+                link='#'
+                tags={["HTML", "CSS", "JavaScript" , "NodeJs"]}
+                github='#'
+>
+        <IconoProyect slot="icon" class="w-5 h-5 text-orange-400" />
+        </ComponenteUtilizable>
+    </SectionContainer>
+
+    </main> 
+
+</Layout>

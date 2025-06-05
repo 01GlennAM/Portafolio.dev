@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+
+
+.font-onest {
+  font-family: 'Onest Variable', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}

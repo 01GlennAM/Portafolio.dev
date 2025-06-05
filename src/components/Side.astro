@@ -1,0 +1,37 @@
+---
+import IconoProyect from "./icons/IconoProyect.astro";
+
+---
+
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sticky top-0 left-0 z-40 h-screen w-64  text-white border-r-4 border-orange-500 py-32 px-4 space-y-6 duration-300 sm:translate-x-0  ">
+  <img src="/foto-glenn.jpg" class="lg:w-48 lg:h-48 h-24 w-24 rounded-full border-orange-400 border-2 mx-auto" alt="Foto de perfil">
+  <nav class="flex flex-col space-y-4 font-bold opacity-80 text-center text-xs lg:text-base font-poppins">
+    <a href="#top" class="hover:text-orange-400">Inicio</a>
+    <a href="#acerca-de-mi" class="hover:text-orange-400">Acerca de mí</a>
+    <a href="#proyectos" class="hover:text-orange-400"> Proyectos </a>
+    <a href="/Hoja_de_vida_Glenn_Alvarez.pdf" 
+        download 
+        class=" text-white duration-300 hover:scale-105
+          flex justify-center items-center
+          text-xs px-3 py-1
+          sm:text-sm sm:px-5 sm:py-2
+          md:text-base md:px-6 md:py-2">
+  Descarga mi CV
+    </a>
+  </nav>
+</aside>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+
+    if (menuBtn && sidebar) {
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+      });
+    }
+  });
+</script>
