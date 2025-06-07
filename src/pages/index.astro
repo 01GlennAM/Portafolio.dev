@@ -1,5 +1,4 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
 import Redes from '../components/Redes.astro';
 import LinkedIn from '../components/icons/LinkedIn.astro';
@@ -7,8 +6,8 @@ import GitHubx from '../components/icons/GitHubx.astro';
 import MailIcon from '../components/icons/Mail.astro';
 import Section from '../components/icons/Section.astro';
 import SectionContainer from '../components/SectionContainer.astro';
-import Proyectoss from '../components/Proyectoss.astro';
 import IconoProyect from '../components/icons/IconoProyect.astro';
+import Habilidades from '../components/Habilidades.astro';
 
 // import Prueba from '../components/Prueba.astro';
 import ComponenteUtilizable from '../components/ComponenteUtilizable.astro';
@@ -44,29 +43,21 @@ import ComponenteUtilizable from '../components/ComponenteUtilizable.astro';
     </SectionContainer> 
     
      <SectionContainer id="proyectos">
-        <h2 class="underline decoration-orange-500 text-base md:text-3xl lg:text-4xl flex gap-2 font-bold font-onest opacity-80 my-4"> proyectos <IconoProyect class="h-14 lg:w-14 opacity-80 "/> </h2>
+        <h2 class="underline decoration-orange-500 text-base md:text-3xl lg:text-4xl flex gap-2 font-bold font-onest opacity-80 my-4"> Proyectos <IconoProyect class="h-14 lg:w-14 opacity-80 "/> </h2>
         <ComponenteUtilizable
-                title="Proyecto"
+                title="Mokepones"
                 description="Un juego de mokepones que se puede jugar de manera local entre dos personas."
                 image="/mokepones.PNG"
                 link='#'
                 tags={["HTML", "CSS", "JavaScript" , "NodeJs"]}
-                github='#'
->
-        <IconoProyect slot="icon" class="w-5 h-5 text-orange-400" />
-        </ComponenteUtilizable>
-
-         <ComponenteUtilizable
-                title="Proyecto"
-                description="Un juego de mokepones que se puede jugar de manera local entre dos personas."
-                image="/mokepones.PNG"
-                link='#'
-                tags={["HTML", "CSS", "JavaScript" , "NodeJs"]}
-                github='#'
->
+                github='#'>
         <IconoProyect slot="icon" class="w-5 h-5 text-orange-400" />
         </ComponenteUtilizable>
     </SectionContainer>
+
+     <SectionContainer id="Habilidades" >     
+        <Habilidades/>        
+    </SectionContainer> 
 
     </main> 
 
