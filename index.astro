@@ -1,16 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Redes from '../components/Redes.astro';
-import LinkedIn from '../components/icons/LinkedIn.astro';
-import GitHubx from '../components/icons/GitHubx.astro';
-import MailIcon from '../components/icons/Mail.astro';
-import Section from '../components/icons/Section.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import IconoProyect from '../components/icons/IconoProyect.astro';
-import Habilidades from '../components/Habilidades.astro';
+import Layout from './src/layouts/Layout.astro';
+import Redes from './src/components/Redes.astro';
+import LinkedIn from './src/components/icons/LinkedIn.astro';
+import GitHubx from './src/components/icons/GitHubx.astro';
+import MailIcon from './src/components/icons/Mail.astro';
+import Section from './src/components/icons/Section.astro';
+import SectionContainer from './src/components/SectionContainer.astro';
+import IconoProyect from './src/components/icons/IconoProyect.astro';
+import Habilidades from './src/components/Habilidades.astro';
 
 // import Prueba from '../components/Prueba.astro';
-import ComponenteUtilizable from '../components/ComponenteUtilizable.astro';
+import ComponenteUtilizable from './src/components/ComponenteUtilizable.astro';
 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -29,7 +29,7 @@ import ComponenteUtilizable from '../components/ComponenteUtilizable.astro';
              <Redes href="https://www.linkedin.com/in/glenn-álvarez-b37029297/">
                 <LinkedIn class="w-6 h-6"  /> LinkedIn
              </Redes >
-            <Redes href="https://github.com/session">
+            <Redes href="https://github.com/01GlennAM">
                 <GitHubx class="w-6 h-6 " /> GitHub
             </Redes>
             <Redes href="https://github.com/01GlennAM">
@@ -48,9 +48,9 @@ import ComponenteUtilizable from '../components/ComponenteUtilizable.astro';
                 title="Mokepones"
                 description="Un juego de mokepones que se puede jugar de manera local entre dos personas."
                 image="/mokepones.PNG"
-                link='#'
+                link='https://github.com/01GlennAM/proyecto-mokepones'
                 tags={["HTML", "CSS", "JavaScript" , "NodeJs"]}
-                github='#'>
+                github='https://github.com/01GlennAM/proyecto-mokepones'>
         <IconoProyect slot="icon" class="w-5 h-5 text-orange-400" />
         </ComponenteUtilizable>
     </SectionContainer>
