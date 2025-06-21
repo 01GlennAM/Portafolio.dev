@@ -69,40 +69,32 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
 
  
   <!-- JS para plegar/desplegar sidebar en móvil -->
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const toggleSidebar = document.getElementById('toggleSidebar');
-  const sidebar = document.getElementById('sidebar');
 
-  if (!toggleSidebar || !sidebar) return;
-
-    toggleSidebar.addEventListener('click', () => {
-      sidebar.classList.toggle('-translate-x-full');
-    });
-  });
-
-</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('toggleSidebar');
     const sidebar = document.getElementById('sidebar');
 
-    if (!toggleButton || !sidebar) return; // <-- Si no existen, salimos
+    if (!toggleButton || !sidebar) return;
 
     toggleButton.addEventListener('click', (e) => {
       e.stopPropagation();
-      sidebar.classList.toggle('hidden');
+      sidebar.classList.toggle('-translate-x-full');
     });
 
+    // Cierra el sidebar si haces clic fuera (solo en móvil)
     document.addEventListener('click', (e) => {
-      const isClickInside = sidebar.contains(e.target) || toggleButton.contains(e.target);
-      if (!isClickInside && window.innerWidth < 768 && !sidebar.classList.contains('hidden')) {
-        sidebar.classList.add('hidden');
+      const clickInside = sidebar.contains(e.target) || toggleButton.contains(e.target);
+      const isMobile = window.innerWidth < 768;
+
+      if (!clickInside && isMobile && !sidebar.classList.contains('-translate-x-full')) {
+        sidebar.classList.add('-translate-x-full');
       }
     });
   });
 </script>
+
 
 
 </body>
