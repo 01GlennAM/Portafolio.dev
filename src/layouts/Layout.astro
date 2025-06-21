@@ -25,18 +25,26 @@ const { titulo } = Astro.props; // para recibir el título
 		<title>{titulo}</title>
 
 	</head>
-	<body class="overflow-x-hidden text-white">
-				<Side />
-				<main class="flex-1 ml-0 p-4 min-h-screen ">
-					<slot />
-					<Footer />
-				</main>
-	</body>
+	<body class="relative overflow-x-hidden text-white">
+  <!-- Fondo galaxia -->
+  <div class="fixed inset-0 -z-10 bg-black" id="galaxy-layer">
+    <div class="absolute inset-0 animate-stars"></div>
+  </div>
+
+  <Side />
+
+  <main class="flex-1 ml-0 p-4 min-h-screen relative z-10">
+    <slot />
+    <Footer />
+  </main>
+</body>
+
 </html>
 
 <style is:global>
 	:root{
 		color-scheme: light dark;
+		
 	}
 
 	html{
@@ -51,12 +59,41 @@ const { titulo } = Astro.props; // para recibir el título
 		width: 100%;
 		height: 100%;
 		
-		
 	}
 
 	@media (prefers-reduced-motion:reduce){
 		html{
 			scroll-behavior: auto;
 		}
-	}
+	}	
+
+	/* fonde de estrellas flotantes */
+
+	@keyframes starsMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 1000px;
+  }
+}
+
+#galaxy-layer {
+  background: radial-gradient(ellipse at bottom, #0b1e2d 0%, #000000 100%);
+  z-index: -10;
+}
+
+.animate-stars {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+
+  background-repeat: repeat;
+  background-size: contain;
+  opacity: 0.9;
+  animation: starsMove 100s linear infinite;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 </style>
