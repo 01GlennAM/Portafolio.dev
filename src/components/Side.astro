@@ -6,75 +6,12 @@ import SkillsIcon from "./icons/SkillsIcon.astro";
 import DescargaIcon from "./icons/DescargaIcon.astro";
 
 ---
-<!-- Sidebar -->
-<!-- <aside id="sidebar" class="sticky top-0 left-0 z-40 h-screen text-white border-r-4 border-orange-500 py-32 px-6 space-y-6 duration-300 sm:translate-x-0 ">
-  <div class="h-16 w-16 md:h-56 md:w-56 rounded-full border-2 border-orange-500 overflow-hidden mx-auto"> 
-    <img src="/foto-glenn.jpg" class=" w-full h-full object-cover" alt="Foto de perfil">
-  </div>
-  <nav class="flex flex-col space-y-4 font-bold opacity-80 items-center lg:text-base font-poppins">
-    <a href="#top" class="hover:text-orange-400 text-sm hover:scale-105">
-      <span class="inline md:hidden"> 
-        <IconoHome class="w-6 h-6"/>     
-      </span>
-      <span class="hidden md:inline">Inicio</span>
-    </a>
-
-    <a href="#acerca-de-mi" class="hover:text-orange-400 text-sm hover:scale-105">
-      <span class="inline md:hidden"> 
-        <IconoAcerca class="w-8 h-8"/>     
-      </span>
-      <span class="hidden md:inline">Acerca de mi</span>
-    </a>
-
-    <a href="#proyectos" class="hover:text-orange-400 text-sm hover:scale-105"> 
-       <span class="inline md:hidden"> 
-        <IconoProyect class="w-8 h-8 "/>     
-      </span>
-      <span class="hidden md:inline">Proyectos</span>
-    </a>
-
-    <a href="#Habilidades" class="hover:text-orange-400 text-sm hover:scale-105">
-       <span class="inline md:hidden"> 
-        <SkillsIcon class="w-8 h-8 "/>     
-      </span>
-      <span class="hidden md:inline">Skills</span>
-    </a>
-    
-    <a href="/Hoja_de_vida_Glenn_Alvarez.pdf" 
-        download 
-        class=" text-white hover:text-orange-400 duration-300 hover:scale-105
-          flex 
-          text-sm
-          sm:text-sm sm:px-5 sm:py-2
-          md:text-sm md:px-1 md:py-1">
-          <span class="inline md:hidden"> 
-        <DescargaIcon class="w-8 h-8"/>     
-        </span>
-        <span class="hidden md:inline">Descarga mi cv</span>
-      </a>
-          
-    </a>
-  </nav>
-</aside>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById("menuBtn");
-    const sidebar = document.getElementById("sidebar");
-
-    if (menuBtn && sidebar) {
-      menuBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("-translate-x-full");
-      });
-    }
-  });
-</script> -->
 
 <body class="flex min-h-screen">
 
   <!-- Botón hamburguesa solo en móvil -->
   <button id="toggleSidebar" type="button" class="md:hidden p-2 px-4 fixed z-50 top-4 left-4 bg-orange-500 rounded">
-    <svg class="w-6 h-6 text-gray-100 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg class="w-6 h-6 text-gray-100 font-poppins " fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
     </svg>
@@ -82,7 +19,7 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
 
   <!-- Sidebar -->
   <aside id="sidebar"
-         class="fixed py-32 space-y-6  px-2 top-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 shadow-md z-50 border-r-2 sm:border-orange-500 opacity-80">
+         class="fixed py-32 space-y-6  px-2 top-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 shadow-md z-50 sm:border-orange-500 opacity-80">
 
     <div class="h-16 w-16 md:h-56 md:w-56 rounded-full border-2 border-orange-500 overflow-hidden"> 
         <img src="/foto-glenn.jpg" class=" w-full h-full object-cover" alt="Foto de perfil">
@@ -93,7 +30,7 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
       <span class="inline md:hidden"> 
         <IconoHome class="w-6 h-6"/>     
       </span>
-        <span class="hidden md:inline">Inicio</span>
+        <span class="hidden md:inline ">Inicio</span>
       </a>
       </a>
 
@@ -101,7 +38,7 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
         <span class="inline md:hidden"> 
         <IconoAcerca class="w-8 h-8"/>     
       </span>
-        <span class="hidden md:inline">Acerca de mi</span>
+        <span class="hidden md:inline ">Acerca de mi</span>
       </a>
 
       <a href="#proyectos" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-orange-500 font-poppins">
@@ -147,25 +84,26 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
 </script>
 
 <script>
-  const toggleButton = document.getElementById('toggleSidebar');
-  const sidebar = document.getElementById('sidebar');
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
 
-  // Manejador del botón
-  toggleButton.addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita que el clic se propague al document
-    sidebar.classList.toggle('hidden');
-  });
+    if (!toggleButton || !sidebar) return; // <-- Si no existen, salimos
 
-  // Manejador global para cerrar si se hace clic fuera
-  document.addEventListener('click', function (e) {
-    const isClickInside = sidebar.contains(e.target) || toggleButton.contains(e.target);
+    toggleButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sidebar.classList.toggle('hidden');
+    });
 
-    // Si es un clic fuera del sidebar y estamos en móvil, lo ocultamos
-    if (!isClickInside && window.innerWidth < 768 && !sidebar.classList.contains('hidden')) {
-      sidebar.classList.add('hidden');
-    }
+    document.addEventListener('click', (e) => {
+      const isClickInside = sidebar.contains(e.target) || toggleButton.contains(e.target);
+      if (!isClickInside && window.innerWidth < 768 && !sidebar.classList.contains('hidden')) {
+        sidebar.classList.add('hidden');
+      }
+    });
   });
 </script>
+
 
 </body>
 
