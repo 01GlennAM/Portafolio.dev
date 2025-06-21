@@ -146,5 +146,26 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
 
 </script>
 
+<script>
+  const toggleButton = document.getElementById('toggleSidebar');
+  const sidebar = document.getElementById('sidebar');
+
+  // Manejador del botón
+  toggleButton.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic se propague al document
+    sidebar.classList.toggle('hidden');
+  });
+
+  // Manejador global para cerrar si se hace clic fuera
+  document.addEventListener('click', function (e) {
+    const isClickInside = sidebar.contains(e.target) || toggleButton.contains(e.target);
+
+    // Si es un clic fuera del sidebar y estamos en móvil, lo ocultamos
+    if (!isClickInside && window.innerWidth < 768 && !sidebar.classList.contains('hidden')) {
+      sidebar.classList.add('hidden');
+    }
+  });
+</script>
+
 </body>
 
