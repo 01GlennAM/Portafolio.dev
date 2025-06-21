@@ -2,37 +2,49 @@
 import SkillsIcon from "./icons/SkillsIcon.astro";
 
 ---
-<section id="skills" class="flex flex-col justify-center items-center  text-white py-12">
+<section id="skills" class="justify-center items-center  text-white py-12 ms:grid ms:grid-cols-2">
   <div class="flex items-center gap-2 justify-center"> 
     <h2  class="underline decoration-orange-500 text-base md:text-3xl lg:text-4xl flex gap-2 font-bold font-onest opacity-70">Skills <SkillsIcon class="h-10 lg:w-14 opacity-80"/></h2>
   </div> <br>
-   <div class="flex items-center space-x-12">
-    <p class=""> Html
-        <img class="h-16 w-16 hover:scale-110 mt-2 font-poppins" src= "/skill-icons--html.png" alt="html">
-    </p>
-   <p class=""> Css
-        <img class="h-16 w-16 hover:scale-110 mt-2 font-poppins" src= "/skill-icons--css.png" alt="Css">
-    </p>
-    <p class=""> Tailwind
-        <img class="h-16 w-16 hover:scale-110 mt-2 font-poppins" src= "/skill-icons--tailwindcss-dark.png" alt="Tailwind">
-    </p>
-    <p class=""> JavaScript
-        <img class="h-16 w-16 hover:scale-110 mt-2 font-poppins" src= "/skill-icons--javascript.png" alt=JavaScript">
-    </p>
-      </p>
-      <p class=""> Mysql
-        <img class="h-16 w-16 hover:scale-110 mt-2 font-poppins" src= "/skill-icons--mysql-dark.png" alt=Msql">
-    </p>
-      </p>
-      <p class=""> GitHub
-        <img class="h-16 w-16 hover:scale-110 mt-2 font-poppins" src= "/skill-icons--github-dark.png" alt=Github">
-    </p>
-      </p>
-      <p class=""> Git
-        <img class="h-16 w-16 hover:scale-110 mt-2 font-poppins" src= "/skill-icons--git.png" alt=Git">
-    </p>
-   </div>
 
+  <!-- se debe poner cada item en un div por que de lo contrario seria semantimante incorrecto solamente al estar envuelto en la etiqueta p -->
+
+   <div class="flex flex-wrap justify-center items-center gap-6">
+  <div class="basis-1/2 sm:basis-1/3 lg:basis-auto text-center">
+    <p class="sm:opacity-80">Html</p>
+    <img class="h-16 w-16 mx-auto hover:scale-110 mt-2" src="/skill-icons--html.png" alt="html">
+  </div>
+
+  <div class="basis-1/2 sm:basis-1/3 lg:basis-auto text-center">
+    <p class="sm:opacity-80">Css</p>
+    <img class="h-16 w-16 mx-auto hover:scale-110 mt-2" src="/skill-icons--css.png" alt="css">
+  </div>
+
+  <div class="basis-1/2 sm:basis-1/3 lg:basis-auto text-center">
+    <p class="sm:opacity-80">Tailwind</p>
+    <img class="h-16 w-16 mx-auto hover:scale-110 mt-2" src="/skill-icons--tailwindcss-dark.png" alt="tailwind">
+  </div>
+
+  <div class="basis-1/2 sm:basis-1/3 lg:basis-auto text-center">
+    <p class="sm:opacity-80">JavaScript</p>
+    <img class="h-16 w-16 mx-auto hover:scale-110 mt-2" src="/skill-icons--javascript.png" alt="js">
+  </div>
+
+  <div class="basis-1/2 sm:basis-1/3 lg:basis-auto text-center">
+    <p class="sm:opacity-80">MySQL</p>
+    <img class="h-16 w-16 mx-auto hover:scale-110 mt-2" src="/skill-icons--mysql-dark.png" alt="mysql">
+  </div>
+
+  <div class="basis-1/2 sm:basis-1/3 lg:basis-auto text-center">
+    <p class="sm:opacity-80">GitHub</p>
+    <img class="h-16 w-16 mx-auto hover:scale-110 mt-2" src="/skill-icons--github-dark.png" alt="github">
+  </div>
+
+  <div class="basis-1/2 sm:basis-1/3 lg:basis-auto text-center">
+    <p class="sm:opacity-80">Git</p>
+    <img class="h-16 w-16 mx-auto hover:scale-110 mt-2" src="/skill-icons--git.png" alt="git">
+  </div>
+</div>
 
 </section>
 

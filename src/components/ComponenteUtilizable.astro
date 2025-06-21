@@ -17,7 +17,7 @@ export interface Props {
 const { title, description, image, tags, github, link } = Astro.props;
 ---
 
-<article class="rounded shadow p-4 max-w-md w-full mx-auto mb-6 border-1 border-orange-500 hover:scale-102 ">
+<article class="rounded shadow p-4 md:max-w-md max-w-[18rem] w-full mx-auto mb-6 border-1 border-orange-500 hover:scale-102  ">
   <img src={image} alt={`imagen del proyecto ${title}`} class="w-full h-auto rounded mb-4" />
 
   <h3 class="text-xl font-bold mb-2 flex items-center gap-2 font-onest opacity-80">

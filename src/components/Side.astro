@@ -7,7 +7,7 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
 
 ---
 <!-- Sidebar -->
-<aside id="sidebar" class="sticky top-0 left-0 z-40 h-screen text-white border-r-4 border-orange-500 py-32 px-6 space-y-6 duration-300 sm:translate-x-0 ">
+<!-- <aside id="sidebar" class="sticky top-0 left-0 z-40 h-screen text-white border-r-4 border-orange-500 py-32 px-6 space-y-6 duration-300 sm:translate-x-0 ">
   <div class="h-16 w-16 md:h-56 md:w-56 rounded-full border-2 border-orange-500 overflow-hidden mx-auto"> 
     <img src="/foto-glenn.jpg" class=" w-full h-full object-cover" alt="Foto de perfil">
   </div>
@@ -68,4 +68,83 @@ import DescargaIcon from "./icons/DescargaIcon.astro";
       });
     }
   });
+</script> -->
+
+<body class="flex min-h-screen">
+
+  <!-- Botón hamburguesa solo en móvil -->
+  <button id="toggleSidebar" type="button" class="md:hidden p-2 px-4 fixed z-50 top-4 left-4 bg-orange-500 rounded">
+    <svg class="w-6 h-6 text-gray-100 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+         class="fixed py-32 space-y-6  px-2 top-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 shadow-md z-50 border-r-2 sm:border-orange-500 opacity-80">
+
+    <div class="h-16 w-16 md:h-56 md:w-56 rounded-full border-2 border-orange-500 overflow-hidden"> 
+        <img src="/foto-glenn.jpg" class=" w-full h-full object-cover" alt="Foto de perfil">
+    </div>
+
+    <nav class="ms:w-8">
+      <a href="#top" class="block py-2.5 px-5 rounded transition duration-200 hover:bg-orange-500 font-poppins">
+      <span class="inline md:hidden"> 
+        <IconoHome class="w-6 h-6"/>     
+      </span>
+        <span class="hidden md:inline">Inicio</span>
+      </a>
+      </a>
+
+      <a href="#acerca-de-mi" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-orange-500 font-poppis">
+        <span class="inline md:hidden"> 
+        <IconoAcerca class="w-8 h-8"/>     
+      </span>
+        <span class="hidden md:inline">Acerca de mi</span>
+      </a>
+
+      <a href="#proyectos" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-orange-500 font-poppins">
+        <span class="inline md:hidden"> 
+            <IconoProyect class="w-8 h-8 "/>     
+        </span>
+        <span class="hidden md:inline">Proyectos</span>
+      </a>
+
+      <a href="#skills" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-orange-500 font-poppins">
+      <span class="inline md:hidden"> 
+          <SkillsIcon class="w-8 h-8 "/>     
+      </span>
+        <span class="hidden md:inline">Skills</span>
+      </a>
+
+      </a>
+      <a href="/Hoja_de_vida_Glenn_Alvarez.pdf" 
+        download 
+        class="block py-2.5 px-4 rounded transition duration-200 hover:bg-orange-500 font-poppins">
+          <span class="inline md:hidden"> 
+        <DescargaIcon class="w-8 h-8"/>     
+        </span>
+        <span class="hidden md:inline">Descarga mi cv</span>
+      </a>
+    </nav>
+  </aside>
+
+ 
+  <!-- JS para plegar/desplegar sidebar en móvil -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const toggleSidebar = document.getElementById('toggleSidebar');
+  const sidebar = document.getElementById('sidebar');
+
+  if (!toggleSidebar || !sidebar) return;
+
+    toggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+  });
+
 </script>
+
+</body>
+
